@@ -2,7 +2,7 @@
 
 # 配置参数
 USER="root"          # SSH用户名
-PASSWORD="DCauto1!2@"      # SSH密码
+PASSWORD="xxx"      # SSH密码
 DEST_DIR="/home/t00906153"  # 目标目录（确保有写入权限）
 SOURCE_FILE="/home/t00906153/dsV3_0310/dsV3-dev_release_0211.zip" # 源文件路径
 SOURCE_IP="141.61.29.101"
