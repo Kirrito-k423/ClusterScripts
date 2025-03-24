@@ -1,5 +1,5 @@
 #!/bin/bash
-
+USER="root" 
 # 定义本地日志目录
 LOCAL_DIR="/path/to/local/logs"
 # 定义远程机器的 IP 地址列表
@@ -16,7 +16,7 @@ for IP in "${REMOTE_MACHINES[@]}"; do
   mkdir -p "$DEST_DIR"
 
   # 使用 sshpass 和 rsync 同步日志文件到对应的本地子目录
-  sshpass -p "$SSH_PASSWORD" rsync -avz -e ssh "user@$IP:$REMOTE_LOG_PATH" "$DEST_DIR"
+  sshpass -p "$SSH_PASSWORD" rsync -avz -e ssh "$USER@$IP:$REMOTE_LOG_PATH" "$DEST_DIR"
 
   if [ $? -eq 0 ]; then
     echo "Logs from $IP synchronized successfully."
