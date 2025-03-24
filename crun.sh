@@ -75,7 +75,7 @@ for ip in "${IPS[@]}"; do
         if [[ "$ip" == $(hostname -I | awk '{print $1}') ]]; then
             eval "$command" 2>&1 | sed "s/^/[本地] /"
         else
-            sshpass -p "$PASSWORD" ssh -n "$USER@$ip" "$command" 2>&1 | sed "s/^/[远程] /"
+            sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no -o LogLevel=QUIET -n "$USER@$ip" "$command" 2>&1 | sed "s/^/[远程] /"
         fi
         echo "[完成] $ip"
     ) &
