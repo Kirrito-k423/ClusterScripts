@@ -7,11 +7,12 @@ PACKAGE="torch"
 
 # 可选的国内 pip 源 (格式: "URL  Trusted-Host  名称")
 SOURCES=(
-    # "https://mirrors.aliyun.com/pypi/simple/        mirrors.aliyun.com        阿里云"
-    # "https://repo.huaweicloud.com/repository/pypi/simple/  repo.huaweicloud.com 华为云"
-    "https://pypi.mirrors.ustc.edu.cn/simple/       pypi.mirrors.ustc.edu.cn  中科大"
+    "https://pypi.org/simple/  pypi.org  默认源"
+    "https://mirrors.aliyun.com/pypi/simple/        mirrors.aliyun.com        阿里云"
+    "https://repo.huaweicloud.com/repository/pypi/simple/  repo.huaweicloud.com 华为云"
+    "https://pypi.mirrors.ustc.edu.cn/simple/       mirrors.ustc.edu.cn  中科大"
     # 清华源已被封，跳过或用于对比
-    # "https://pypi.tuna.tsinghua.edu.cn/simple/    pypi.tuna.tsinghua.edu.cn 清华"
+    "https://pypi.tuna.tsinghua.edu.cn/simple/    pypi.tuna.tsinghua.edu.cn 清华"
 )
 
 # 可选的代理列表（没有则留空字符串表示“无代理”）
@@ -26,8 +27,8 @@ PROXIES=(
     # "90.253.10.3:8081"
     # "http://90.253.10.3:8081"
     "http://p_atlas:proxy%40123@90.253.10.3:8082"
-    "http://90.253.10.3:8082"
-    "90.253.10.3:8082"
+    # "http://90.253.10.3:8082"
+    # "90.253.10.3:8082"
     # "http://p_atlas:proxy%40123@90.253.10.3:8083"
     # "http://90.253.10.3:8083"
 )
