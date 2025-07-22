@@ -155,7 +155,7 @@ for ip in "${IPs[@]}"; do
         fi
     else
         # ssh-copy-id 同步key
-        ssh-copy-id $USER@$ip
+        sudo -i ssh-copy-id -i /root/.ssh/id_rsa.pub $USER@$ip
 
         # 远程节点处理
         if [ "$SOURCE_TYPE" = "directory" ]; then
