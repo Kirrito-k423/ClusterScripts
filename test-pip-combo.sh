@@ -3,7 +3,7 @@
 # ==================== 配置区 ====================
 
 # 要安装的包（建议固定版本，确保可重复测试）
-PACKAGE="cmake"
+PACKAGE="torch"
 
 # 可选的国内 pip 源 (格式: "URL  Trusted-Host  名称")
 SOURCES=(
@@ -16,18 +16,20 @@ SOURCES=(
 
 # 可选的代理列表（没有则留空字符串表示“无代理”）
 PROXIES=(
-    "http://p_atlas:proxy%40123@90.253.10.3:6688"
-    "http://p_atlas:proxy%40123@90.253.10.3:8080"
-    # "http://p_atlas:proxy%40123@90.253.10.3:8081"
-    # "http://p_atlas:proxy%40123@90.253.10.3:8082"
-    # "http://p_atlas:proxy%40123@90.253.10.3:8083"
     # ""  # 无代理（直连）
-    # "http://90.253.10.3:8080"
-    "http://90.253.10.3:8081"
-    # "90.253.10.3:8081"
-    # "http://90.253.10.3:8082"
-    # "http://90.253.10.3:8083"
+    # "http://p_atlas:proxy%40123@90.253.10.3:6688"
     # "http://90.253.10.3:6688"
+    # "http://p_atlas:proxy%40123@90.253.10.3:8080"
+    # "http://90.253.10.3:8080"
+    # "90.253.10.3:8080"
+    # "http://p_atlas:proxy%40123@90.253.10.3:8081"
+    # "90.253.10.3:8081"
+    # "http://90.253.10.3:8081"
+    "http://p_atlas:proxy%40123@90.253.10.3:8082"
+    "http://90.253.10.3:8082"
+    "90.253.10.3:8082"
+    # "http://p_atlas:proxy%40123@90.253.10.3:8083"
+    # "http://90.253.10.3:8083"
 )
 
 # 是否强制重新安装（1=是，0=否）
@@ -68,8 +70,9 @@ for source in "${SOURCES[@]}"; do
         start_time=$(date +%s)
 
         # 构建 pip 命令
+        # apt install expect
         cmd=(
-            pip install "$PACKAGE"
+            unbuffer pip install "$PACKAGE"
             -i "$URL"
             --trusted-host "$HOST"
             -v --progress-bar=on 
