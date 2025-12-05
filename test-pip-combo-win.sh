@@ -7,8 +7,8 @@ PACKAGE="torch"
 
 # 可选的国内 pip 源 (格式: "URL  Trusted-Host  名称")
 SOURCES=(
-    "https://pypi.org/simple/  pypi.org  默认源"
     "https://mirrors.aliyun.com/pypi/simple/        mirrors.aliyun.com        阿里云"
+    "https://pypi.org/simple/  pypi.org  默认源"
     "https://repo.huaweicloud.com/repository/pypi/simple/  repo.huaweicloud.com 华为云"
     "https://pypi.mirrors.ustc.edu.cn/simple/       mirrors.ustc.edu.cn  中科大"
     # 清华源已被封，跳过或用于对比
@@ -18,19 +18,25 @@ SOURCES=(
 # 可选的代理列表（没有则留空字符串表示“无代理”）
 PROXIES=(
     # ""  # 无代理（直连）
-    "proxyHK.huawei.com:8080"
-    "proxyhk.huawei.com:8080"
-    "proxyBLR.huawei.com:8080"
-    "proxycn2.huawei.com:8080"
-    "proxyUK.huawei.com:8080"
-    "proxyNJ.huawei.com:8080"
-    "proxySG.huawei.com:8080"
-    "proxyDE.huawei.com:8080"
-    "proxyJP.huawei.com:8080"
-    "proxyCA.huawei.com:8080"
-    "proxyRU.huawei.com:8080"
-    "proxysg.huawei.com:8080"
     "proxy.huawei.com:8080"
+    # "proxyHK.huawei.com:8080"
+    # "proxyhk.huawei.com:8080"
+    # "proxyblr.huawei.com:8080" # india 印度
+    # "proxycn2.huawei.com:8080" # Dongguan
+    # "proxyUK.huawei.com:8080"
+    "proxynj.huawei.com:8080" # nanjing
+    # "proxySG.huawei.com:8080"
+    # "proxyDE.huawei.com:8080"
+    # "proxyjp.huawei.com:8080"
+    # "proxyCA.huawei.com:8080"
+    # "proxyDG.huawei.com:8080"
+    # "proxyma.huawei.com:8080" # 17MB/s malaysia
+    # "proxyng.huawei.com:8080" # Nigeria 非洲尼日利亚
+    # "proxypk.huawei.com:8080" # Pakistan 巴基斯坦
+    # "proxyid.huawei.com:8080" # indonesia 印度尼西亚
+    # "proxyph.huawei.com:8080" # Philippines
+    # "proxyRU.huawei.com:8080"
+    "proxysg.huawei.com:8080" # singapore
 )
 
 # 是否强制重新安装（1=是，0=否）
